@@ -1,5 +1,5 @@
 {% set name = "crc32c" %}
-{% set version = "1.1.1" %}
+{% set version = "None" %}
 
 package:
   name: lib{{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/google/{{ name }}/archive/{{ version }}.tar.gz
-  sha256: a6533f45b1670b5d59b38a514d82b09c6fb70cc1050467220216335e873074e8
+  sha256: d5558cd419c8d46bdc958064cb97f963d1ea793866414c025906ec15033512ed
 
 build:
   number: 2
