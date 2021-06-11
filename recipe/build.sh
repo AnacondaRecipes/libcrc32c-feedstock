@@ -7,6 +7,12 @@ pushd build_cmake
 
 export OPENSSL_ROOT_DIR=$PREFIX
 
+if [[ $(uname -m) == "aarch64" ]]; then
+  # new warning due gcc 10.x
+  export CFLAGS="${CFLAGS} -Wno-error=address"
+  export CXXFLAGS="${CXXFLAGS} -Wno-error=address"
+fi
+
 cmake -GNinja \
     -DBUILD_TESTING=OFF \
     -DBUILD_SHARED_LIBS=ON \
