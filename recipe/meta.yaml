@@ -1,5 +1,5 @@
 {% set name = "crc32c" %}
-{% set version = "1.1.1" %}
+{% set version = "1.1.2" %}
 
 package:
   name: lib{{ name|lower }}
@@ -7,10 +7,10 @@ package:
 
 source:
   url: https://github.com/google/{{ name }}/archive/{{ version }}.tar.gz
-  sha256: a6533f45b1670b5d59b38a514d82b09c6fb70cc1050467220216335e873074e8
+  sha256: ac07840513072b7fcebda6e821068aa04889018f24e10e46181068fb214d7e56
 
 build:
-  number: 2
+  number: 0
   run_exports:
     - {{ pin_subpackage("libcrc32c", max_pin="x.x") }}
 
@@ -37,7 +37,13 @@ about:
   license: BSD-3-Clause
   license_family: BSD
   license_file: LICENSE
+  license_url: https://github.com/google/crc32c/blob/main/LICENSE
+  dev_url: https://github.com/google/crc32c
+  doc_url: https://github.com/google/crc32c/blob/main/README.md
   summary: 'CRC32C implementation with support for CPU-specific acceleration instructions'
+  description: CRC32C is specified as the CRC that uses the iSCSI polynomial in RFC 3720.
+    The polynomial was introduced by G. Castagnoli, S. Braeuer and M. Herrmann. CRC32C is used
+    in software such as Btrfs, ext4, Ceph and leveldb.
 
 extra:
   recipe-maintainers:
