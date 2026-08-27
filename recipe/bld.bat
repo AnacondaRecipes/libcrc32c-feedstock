@@ -15,6 +15,7 @@ cmake -G "Ninja" ^
          -DCRC32C_BUILD_BENCHMARKS=OFF ^
          -DCRC32C_USE_GLOG=0 ^
          -DCMAKE_WINDOWS_EXPORT_ALL_SYMBOLS=ON ^
+         -DCMAKE_POLICY_VERSION_MINIMUM=3.5 ^
          ..
 if errorlevel 1 exit 1
 cmake --build . --target install --config Release
